@@ -1,0 +1,9 @@
+module One_Bit_Full_Subtractor(input B_in,
+										 input Y, 
+										 input Z,
+										 output D, 
+										 output B_out );
+assign D = B_in ^ Y ^ Z;
+assign B = ~B_in & (Y^Z) | Y & Z;
+
+endmodule

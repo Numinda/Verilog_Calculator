@@ -1,0 +1,17 @@
+module Display_num(input [7:0]sw,
+						 input clk,
+						 output [3:0]an
+						 output [6:0]seg);
+				 
+ wire clk_out;
+ wire [1:0]counter_out;
+ wire  [3:0]mux_out;
+ wire [3:0] zeros,ones,tens,hundreds;
+ parameter zeros=4'b0000;
+ 
+ 
+ 
+ 
+
+
+endmodule

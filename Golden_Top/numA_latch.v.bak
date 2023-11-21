@@ -1,0 +1,23 @@
+module numA_latch(input clk,
+						input [9:0]sw,
+						input [1:0]pb,
+						output [7:0]out);
+						
+		wire pb0_out,pb1_out,reset;
+		wire  [7:0]d_out;
+		assign reset=pb[0]&pb[1];
+		Debounce pd1(pb[0],clk,pb0_out);
+		Debounce pd2(pb[1],clk,pb1_out);
+		D_latch D0(sw[0],sw[8],reset,d_out[0]);
+		D_latch D1(sw[1],sw[8],reset,d_out[1]);
+		D_latch D2(sw[2],sw[8],reset,d_out[2]);
+		D_latch D3(sw[3],sw[8],reset,d_out[3]);
+		D_latch D4(sw[4],sw[8],reset,d_out[4]);
+		D_latch D5(sw[5],sw[8],reset,d_out[5]);
+		D_latch D6(sw[6],sw[8],reset,d_out[6]);
+		D_latch D7(sw[7],sw[8],reset,d_out[7]);
+		
+		assign out=d_out;			
+			
+			
+endmodule

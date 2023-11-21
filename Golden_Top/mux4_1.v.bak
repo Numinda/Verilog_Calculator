@@ -1,0 +1,12 @@
+module mux4_1(input [7:0]I0,
+				  input [7:0]I1,
+				  input[7:0]I2,
+				  input[7:0]I3,
+				  input s2,
+				  input s1,
+				  input en,
+				  output [7:0]y);
+
+assign y<=((~s2)&(~s1)&en&I0)| ((~s2)&(s1)&en&I1)|(s2&(~s1)&en&I2)|(s2&s1&en&I3);
+
+endmodule
